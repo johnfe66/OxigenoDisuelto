@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "572928145875",
+    "firebase_url": "https://oxigenodisuelto.firebaseio.com",
+    "project_id": "oxigenodisuelto",
+    "storage_bucket": "oxigenodisuelto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572928145875:android:52052b4fc2b34c5e",
+        "android_client_info": {
+          "package_name": "com.johnfe.oxigenodisuelto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572928145875-la47b4g5n75ru0nsfjvd7761nb9lei2r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.johnfe.oxigenodisuelto",
+            "certificate_hash": "e755f44af3d823bae2c0edc3e5a45973d5d07cfc"
+          }
+        },
+        {
+          "client_id": "572928145875-ku6ek0jv74g3bjn23prh29ct7e6p16r4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe-yauPsQQdN52eWe5wK_4CqXSH86J1_w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572928145875-ku6ek0jv74g3bjn23prh29ct7e6p16r4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
