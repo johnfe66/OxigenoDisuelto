@@ -1,31 +1,28 @@
 package com.johnfe.oxigenodisuelto;
 
 import android.content.Intent;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
+/**
+ * Created by Johnfe Vargas on 2017-04-18.
+ */
 
-import java.net.URI;
-import java.net.URISyntaxException;
-
-public class MainActivity extends AppCompatActivity {
-
+public class Principal extends Fragment {
 
     TextView temperatura;
     TextView oxigeno;
@@ -34,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
     EditText hora1;
     EditText fecha2;
     EditText hora2;
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        View view= inflater.inflate(R.layout.activity_main, container, false);
 
-        System.out.println("hola tab");
-        setContentView(R.layout.activity_main);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         DatabaseReference temper = database.getReference("realtime").child("temperatura");
@@ -48,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        btnBuscar= (Button) findViewById(R.id.btnBuscar);
-        fecha1= (EditText) findViewById(R.id.fecha1);
-        fecha2= (EditText) findViewById(R.id.fecha2);
-        hora1= (EditText) findViewById(R.id.hora1);
-        hora2= (EditText) findViewById(R.id.hora2);
+        btnBuscar= (Button) view.findViewById(R.id.btnBuscar);
+        fecha1= (EditText) view.findViewById(R.id.fecha1);
+        fecha2= (EditText) view.findViewById(R.id.fecha2);
+        hora1= (EditText) view.findViewById(R.id.hora1);
+        hora2= (EditText) view.findViewById(R.id.hora2);
 
-        temperatura= (TextView) findViewById(R.id.txtTemperaturaMain);
-        oxigeno= (TextView) findViewById(R.id.txtOxigeno1);
+        temperatura= (TextView) view.findViewById(R.id.txtTemperaturaMain);
+        oxigeno= (TextView) view.findViewById(R.id.txtOxigeno1);
 
         temper.addValueEventListener(new ValueEventListener() {
             @Override
@@ -97,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(MainActivity.this, ListaDatos.class);
+                Intent intent = new Intent(getContext(), ListaDatos.class);
                 Bundle bundle= new Bundle();
                 bundle.putString("fecha1",fecha1.getText().toString().trim()+hora1.getText().toString().trim());
                 bundle.putString("fecha2",fecha2.getText().toString().trim()+hora2.getText().toString().trim());
@@ -107,7 +104,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+
+        return view;
+
+
     }
-
-
 }

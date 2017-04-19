@@ -111,17 +111,7 @@ public class ListaDatos extends AppCompatActivity {
                 String respuestaJson = buffer.toString();
 
 
-
-                // JSONObject jsonRespuesta = new JSONObject(respuestaJson);
-
-
-                //System.out.println(jsonRespuesta.getString("id"));
-                //System.out.println(jsonRespuesta.getString("nombre"));
-                // System.out.println(jsonRespuesta.getString("cargo"));
-                //System.out.println(jsonRespuesta.getString("empresa"));
-                // String mensaje = "Bienvenido "+jsonRespuesta.getString("nombre");
-
-                String mensaje ="no hay registros";
+               String mensaje ="no hay registros";
                 JSONArray jsonList = new JSONArray(respuestaJson);
 
                 datos.clear();

@@ -34,6 +34,8 @@ public class GraficaActivity extends AppCompatActivity {
 
 
         lineChart= (LineChart) findViewById(R.id.lineChart);
+
+
         ArrayList<Long> tiempo = new ArrayList<>();
         ArrayList<Entry> oxigeno = new ArrayList<>();
         ArrayList<Entry> oxigenoVsTemperatura = new ArrayList<>();
